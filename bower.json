@@ -1,0 +1,17 @@
+{
+  "name": "node-todo",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Brian Doane <brianmdoane@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/bmdoane/node-to-do",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
