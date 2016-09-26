@@ -1,0 +1,27 @@
+{
+  "name": "node-todo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmdoane/node-to-do.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bmdoane/node-to-do/issues"
+  },
+  "homepage": "https://github.com/bmdoane/node-to-do#readme",
+  "devDependencies": {
+    "bower": "^1.7.9"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
