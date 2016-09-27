@@ -1,11 +1,13 @@
 <h1>Just do it!</h1>
 
-<!-- <form ng-submit="addToDo()">
+<form ng-submit="addToDo()">
   <input type="text" ng-model="task" placeholder="What to do" />
+  <input type="text" ng-model="dueDate" placeholder="When to do" />
+  <input type="text" ng-model="assignedTo" placeholder="Who to do" />
   <input type="submit" />
-</form> -->
+</form>
 <ul>
 	<li ng-repeat="todo in todos">
-		{{todo.task}} {{todo.dueDate}} {{todo.assignedTo}}		
+		{{todo.task}} * {{todo.dueDate}} * {{todo.assignedTo}}		
 	</li>
 </ul>
