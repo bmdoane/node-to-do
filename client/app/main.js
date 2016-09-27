@@ -19,7 +19,11 @@ angular.module('nodeToDo', ['ngRoute'])
 				$scope.title = title
 			)
 	})
-	.controller('todo', function($scope, $http) {
-		$http
+	.controller('ToDoCtrl', function($scope, $http) {
+    $http
+      .get('/api/todos')
+      .then(({ data: { task }}) =>
+        $scope.task = task
+      )
 			//.get('/api/todo')
 	})	
