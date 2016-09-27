@@ -7,7 +7,8 @@ const mongoose = require('mongoose')
 const app = express()
 
 // Configure
-const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017/nodetodo'
+// String after localhost should match collection
+const MONGODB_URL = process.env.MONGODB_URL || 'mongodb://localhost:27017/todos'
 const PORT = process.env.PORT || 3000
 
 // Middlewares

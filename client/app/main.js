@@ -25,5 +25,4 @@ angular.module('nodeToDo', ['ngRoute'])
       .then(({ data: { todos }}) =>
         $scope.todos = todos
       )
-			//.get('/api/todo')
 	})	
