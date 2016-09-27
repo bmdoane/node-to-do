@@ -2,6 +2,8 @@
 
 const express = require('express')
 const mongoose = require('mongoose')
+// Destructuring json from body-parser object
+const { json } = require('body-parser')
 
 // Initialize
 const app = express()
@@ -13,6 +15,7 @@ const PORT = process.env.PORT || 3000
 
 // Middlewares
 app.use(express.static('client'))
+app.use(json())
 
 // Routing
 app.get('/api/title', (req, res) =>
@@ -20,9 +23,9 @@ app.get('/api/title', (req, res) =>
 )
 
 const ToDo = mongoose.model('todo', {
-	task: String,
-	dueDate: String,
-	assignedTo: String,
+	task: 'String',
+	dueDate: 'String',
+	assignedTo: 'String',
 })
 
 app.get('/api/todos', (req, res, err) =>
@@ -31,6 +34,14 @@ app.get('/api/todos', (req, res, err) =>
 		.then(todos => res.json({ todos }))
 		.catch(err)
 )
+
+app.post('/api/todos', (req, res, err) => {
+	const todo = req.body
+	ToDo
+		.create(todo)
+		.then(todo => res.json(todo))
+		.catch(err)
+})
 
 mongoose.Promise = Promise
 mongoose.connect(MONGODB_URL, () =>

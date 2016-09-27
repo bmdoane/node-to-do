@@ -20,6 +20,17 @@ angular.module('nodeToDo', ['ngRoute'])
 			)
 	})
 	.controller('ToDoCtrl', function($scope, $http) {
+		$scope.addToDo = () => {
+			const todo = {
+				task: $scope.task,
+				dueDate: $scope.dueDate,
+				assignedTo: $scope.assignedTo,
+			}
+			$http
+				.post('/api/todos', todo)
+				.then(() => $scope.todos.push(todo))
+				.catch(console.error)
+		}
     $http
       .get('/api/todos')
       .then(({ data: { todos }}) =>
