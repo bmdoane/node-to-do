@@ -1,10 +1,25 @@
 'use strict'
 
-angular.module('nodeToDo', [])
-	.controller('main', function($scope, $http) {
+angular.module('nodeToDo', ['ngRoute'])
+	.config($routeProvider =>
+		$routeProvider
+			.when('/', {
+				controller: 'MainCtrl',
+				templateUrl: 'partials/main.html',
+			})
+			.when('/todo', {
+				controller: 'ToDoCtrl',
+				templateUrl: 'partials/todo.html',
+			})			
+	)
+	.controller('MainCtrl', function($scope, $http) {
 		$http
-			.get('/api/todo')
-			.then(({ data: { todo }}) =>
-				$scope.todo = todo
+			.get('/api/title')
+			.then(({ data: { title }}) =>
+				$scope.title = title
 			)
 	})
+	.controller('todo', function($scope, $http) {
+		$http
+			//.get('/api/todo')
+	})	

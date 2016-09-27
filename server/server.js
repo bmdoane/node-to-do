@@ -12,8 +12,8 @@ const PORT = process.env.PORT || 3000
 app.use(express.static('client'))
 
 // Routing
-app.get('/api/todo', (req, res) =>
-	res.json({ todo: 'Pick up steaks' })
+app.get('/api/title', (req, res) =>
+	res.json({ title: 'Things I need to do...' })
 )
 
 // Listen to requests on the provided port and log when available
