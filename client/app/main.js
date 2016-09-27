@@ -22,8 +22,8 @@ angular.module('nodeToDo', ['ngRoute'])
 	.controller('ToDoCtrl', function($scope, $http) {
     $http
       .get('/api/todos')
-      .then(({ data: { task }}) =>
-        $scope.task = task
+      .then(({ data: { todos }}) =>
+        $scope.todos = todos
       )
 			//.get('/api/todo')
 	})	

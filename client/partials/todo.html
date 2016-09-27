@@ -5,7 +5,7 @@
   <input type="submit" />
 </form> -->
 <ul>
-	<li>
-		{{task}}		
+	<li ng-repeat="todo in todos">
+		{{todo.task}} {{todo.dueDate}} {{todo.assignedTo}}		
 	</li>
 </ul>

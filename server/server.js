@@ -17,7 +17,20 @@ app.get('/api/title', (req, res) =>
 )
 
 app.get('/api/todos', (req, res) =>
-  res.json({ task: 'Pick up steaks on the way home'})
+  res.json({ 
+  	todos: [
+  		{
+  			task: 'Pick up steaks on the way home',
+  			dueDate: 'Wednesday',
+  			assignedTo: 'Brian',
+  		},
+  		{
+  			task: 'Take the fridge for a walk',
+  			dueDate: 'Friday',
+  			assignedTo: 'Brian',
+  		}
+  	]
+  })
 )
 
 // Listen to requests on the provided port and log when available
