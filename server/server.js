@@ -43,6 +43,17 @@ app.post('/api/todos', (req, res, err) => {
 		.catch(err)
 })
 
+app.delete('/api/todos/:_id', function(req,res){
+	const body = req.body;
+	const _id = req.params._id.toString();
+  const todos = body.get('todos');
+
+    todos.remove({"_id":_id}, function(err, result) { 
+        res.send( (result === 1) ? { msg: 'Deleted' } : { msg: 'error: '+ err } );
+    });
+
+});
+
 mongoose.Promise = Promise
 mongoose.connect(MONGODB_URL, () =>
 	// Listen to requests on the provided port and log when available
