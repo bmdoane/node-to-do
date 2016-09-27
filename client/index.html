@@ -2,8 +2,16 @@
 <html>
   <head>
     <title>Node ToDo</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">    
   </head>
   <body>
-    <h1>To do or node to do</h1>
+    <div ng-app="nodeToDo">
+      <div class="container">
+        <div ng-view></div>
+      </div>  
+    </div>
+    <script src="/lib/angular/angular.min.js"></script>
+    <script src="/lib/angular-route/angular-route.min.js"></script>
+    <script src="/app/main.js"></script>    
   </body>
 </html>

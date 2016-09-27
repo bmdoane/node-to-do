@@ -1,0 +1,22 @@
+{
+  "name": "node-todo",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Brian Doane <brianmdoane@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/bmdoane/node-to-do",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "angular-route": "^1.5.8"
+  }
+}
