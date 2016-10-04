@@ -28,7 +28,12 @@ angular.module('nodeToDo', ['ngRoute'])
 			}
 			$http
 				.post('/api/todos', todo)
-				.then(() => $scope.todos.push(todo))
+				.then(() => {
+					$scope.todos.push(todo)
+					$scope.task = ""
+					$scope.dueDate = ""
+					$scope.assignedTo = ""
+				})	
 				.catch(console.error)
 		}
     $http

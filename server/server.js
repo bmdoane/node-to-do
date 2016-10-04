@@ -44,9 +44,10 @@ app.post('/api/todos', (req, res, err) => {
 })
 
 app.delete('/api/todos/:_id', function(req,res){
-	const body = req.body;
-	const _id = req.params._id.toString();
-  const todos = body.get('todos');
+	const body = req.body
+	console.log("body", body)
+	const _id = req.params._id.toString()
+  const todos = body.get('todos')
 
     todos.remove({"_id":_id}, function(err, result) { 
         res.send( (result === 1) ? { msg: 'Deleted' } : { msg: 'error: '+ err } );
