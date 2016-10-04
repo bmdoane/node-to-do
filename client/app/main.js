@@ -28,7 +28,12 @@ angular.module('nodeToDo', ['ngRoute'])
 			}
 			$http
 				.post('/api/todos', todo)
-				.then(() => $scope.todos.push(todo))
+				.then(() => {
+					$scope.todos.push(todo)
+					$scope.task = ""
+					$scope.dueDate = ""
+					$scope.assignedTo = ""
+				})	
 				.catch(console.error)
 		}
     $http
@@ -36,4 +41,22 @@ angular.module('nodeToDo', ['ngRoute'])
       .then(({ data: { todos }}) =>
         $scope.todos = todos
       )
+    // $scope.remove = (taskId) => {
+    // 	console.log("clicked");
+    // 	$http
+    // 		.delete(todo.taskId)
+    // 		.then(
+    // }
+		$scope.remove = function(object) {
+        $http({ 
+                url: 'mongodb://localhost:27017/todos', 
+                method: 'DELETE', 
+                data: {_id: object.id}, 
+                headers: {"Content-Type": "application/json;charset=utf-8"}
+        }).then(function(res) {
+            console.log(res.data);
+        }, function(error) {
+            console.log(error);
+        });
+    }; 
 	})	
